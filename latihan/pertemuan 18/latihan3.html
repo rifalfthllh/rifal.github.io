@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan3</title>
+  </head>
+  <body>
+    <script>
+      function radio_box(form) {
+        var ket = "";
+        if (form.wanita.checked == true) {
+          ket = "wanita";
+        } else if (form.pria.checked == true) {
+          ket = "pria";
+        } else {
+          ket = "gakjelas";
+        }
+        alert("anda adalah seorang " + ket);
+      }
+    </script>
+    <form action="">
+      <h1>Memasukan data dengan objek radio</h1>
+      <hr />
+      <p><input type="radio" value="wanita" name="wanita" />wanita</p>
+      <p><input type="radio" value="pria" name="pria" />pria</p>
+      <hr />
+      <p>
+        <input type="button" value="confirm" onclick="radio_box(this.form)" />
+        <input type="reset" value="reset" />
+      </p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deret Bilangan Genap yang Habis Dibagi 3</title>
+    <script type="text/javascript">
+      function generateSequence() {
+        var startValue = parseInt(prompt("Masukkan Nilai Awal:"));
+        var endValue = parseInt(prompt("Masukkan Nilai Akhir:"));
+
+        var evenNumbersDivisibleByThree = [];
+        var sum = 0;
+
+        for (var i = startValue; i <= endValue; i++) {
+          if (i % 2 === 0 && i % 3 === 0) {
+            evenNumbersDivisibleByThree.push(i);
+            sum += i;
+          }
+        }
+
+        displayResults(startValue, endValue, evenNumbersDivisibleByThree, sum);
+      }
+
+      function displayResults(start, end, sequence, totalNumbers) {
+        var resultContainer = document.getElementById("result-container");
+        resultContainer.innerHTML =
+          "<p>Nilai Awal: " +
+          start +
+          "</p>" +
+          "<p>Nilai Akhir: " +
+          end +
+          "</p>" +
+          "<p>Deret yang tampil: " +
+          sequence.join(", ") +
+          "</p>" +
+          "<p>Jumlah deret bilangan: " +
+          sequence.length +
+          " bilangan</p>" +
+          "<p>Jumlah nilai bilangan tersebut: " +
+          totalNumbers +
+          "</p>";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Deret Bilangan Genap yang Habis Dibagi 3</h1>
+    <button onclick="generateSequence()">Generate Deret</button>
+    <div id="result-container"></div>
+  </body>
+</html>

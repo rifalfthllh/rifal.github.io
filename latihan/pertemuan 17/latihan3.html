@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan3</title>
+  </head>
+  <body>
+    <script>
+      var myName = prompt("Please enter your name", "budi");
+      var nb = prompt("Please enter the item name", "sabun");
+      var hs = prompt("Please enter the unit price", "5000");
+      var jb = prompt("Please enter the quantity", "10");
+
+      var hb = hs * jb;
+      var disc = 0;
+
+      if (hb > 500000) {
+        disc = (5 / 100) * hb;
+      } else if (hb > 300000) {
+        disc = (2 / 100) * hb;
+      } else {
+        disc = (0.5 / 100) * hb;
+      }
+
+      var hbb = hb - disc;
+
+      document.write(
+        "<font size=5 color='blue'> penjualan harga barang </font>"
+      );
+      document.write("<font size=4 color='sienna'><pre>");
+      document.write("", "<br>");
+      document.write("Nama barang", nb, "<br>");
+      document.write("Harga satuan", hs, "<br>");
+      document.write("Jumlah Barang", jb, "<br>");
+      document.write("Harga Barang", hb, "<br>");
+      document.write("Harga Discount", disc, "<br>");
+      document.write("Harga Barang Bersih = ", hbb, "<br>");
+      document.write("=", "<br>");
+      document.write("</font></pre>");
+      document.write("<font size=3 color='red'><blink>");
+      document.write("Created by " + myName);
+      document.write("</font></blink>");
+    </script>
+  </body>
+</html>
