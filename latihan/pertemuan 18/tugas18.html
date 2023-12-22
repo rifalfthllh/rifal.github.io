@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Pilihan</title>
+    <script>
+      function showResult() {
+        var choice = document.getElementById("pilihan").value;
+
+        switch (choice) {
+          case "1":
+            calculate();
+            break;
+          case "2":
+            calculateArea();
+            break;
+          case "3":
+            generateSeries();
+            break;
+          default:
+            alert("Pilihan tidak valid");
+        }
+      }
+
+      function calculate() {
+        var num1 = parseFloat(prompt("Masukkan angka pertama:"));
+        var operator = prompt("Masukkan operator (+, -, *, /):");
+        var num2 = parseFloat(prompt("Masukkan angka kedua:"));
+
+        var result;
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num1 / num2;
+            break;
+          default:
+            alert("Operator tidak valid");
+            return;
+        }
+
+        alert("Hasil perhitungan: " + result);
+      }
+
+      function calculateArea() {
+        var base1 = parseFloat(prompt("Masukkan panjang sisi atas trapesium:"));
+        var base2 = parseFloat(
+          prompt("Masukkan panjang sisi bawah trapesium:")
+        );
+        var height = parseFloat(prompt("Masukkan tinggi trapesium:"));
+
+        var area = 0.5 * (base1 + base2) * height;
+
+        alert("Luas trapesium: " + area);
+      }
+
+      function generateSeries() {
+        var n = parseInt(prompt("Masukkan jumlah suku deret:"));
+        var sum = 0;
+
+        for (var i = 1; i <= n; i++) {
+          sum += i;
+        }
+
+        alert("Hasil deret: " + sum);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Menu Pilihan</h1>
+    <p>Menu Pilihan :</p>
+    <p>[1] Menghitung Kalkulator</p>
+    <p>[2] Menghitung Luas Trapesium</p>
+    <p>[3] Menghitung Deret</p>
+    <p>
+      Pilihan Anda :
+      <input type="text" id="pilihan" />
+      <button onclick="showResult()">Submit</button>
+    </p>
+  </body>
+</html>
